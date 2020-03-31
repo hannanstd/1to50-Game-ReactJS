@@ -1,0 +1,102 @@
+$item-background: rgba(26, 188, 156, 0.9);
+
+body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.app {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+	min-height: 100vh;
+	flex-direction: column;
+
+	.button {
+		margin-top: 10px;
+	}
+}
+
+.button {
+	cursor: pointer;
+	color: #212529;
+	background-color: #f8f9fa;
+	border: 1px solid #e8e8e8;
+	padding: 10px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+}
+
+.grid {
+	display: flex;
+	flex-direction: row;
+	max-width: 400px;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+
+	.items {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: bold;
+		color: #fff;
+		background: $item-background;
+		margin: 5px;
+		width: 70px;
+		height: 70px;
+		cursor: pointer;
+		-webkit-transition: all 0.35s ease-in-out;
+		transition: all 0.35s ease-in-out;
+	}
+	.items.new {
+		background: rgba($item-background, 1);
+		-webkit-animation: flash linear 0.5s 1;
+		-moz-animation: flash linear 0.5s 1;
+		-ms-animation: flash linear 0.5s 1;
+		-o-animation: flash linear 0.5s 1;
+		animation: flash linear 0.5s 1;
+	}
+	.items.done {
+		background: transparent;
+	}
+}
+
+@media all and (max-width: 450px) {
+	.grid {
+		max-width: 100%;
+		.items {
+			width: calc(100% / 5 - 10px);
+			height: 55px;
+		}
+	}
+}
+
+@-webkit-keyframes flash {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.1;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes flash {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.1;
+	}
+	100% {
+		opacity: 1;
+	}
+}
