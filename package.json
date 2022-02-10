@@ -32,7 +32,7 @@
     ]
   },
   "devDependencies": {
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "react-app-rewired": "^2.1.5"
   }
 }
